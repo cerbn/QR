@@ -22,7 +22,7 @@ export class ProfesorPage implements OnInit {
   asistencias: any[] = [];
   KEY_ASISTENCIA = 'asistencias';
   asistencia = {
-    cod_asistencia: this.value,
+    value: '',
     fecha_hora: new Date(),
     alumno: [],
 
@@ -46,9 +46,9 @@ export class ProfesorPage implements OnInit {
   }
   
   generarQR(){
-    if (this.value == '') {
-      this.value = v4()
-      return this.value;
+    if (this.asistencia.value == '') {
+      this.asistencia.value = v4()
+      return this.asistencia.value;
     }
     
   
