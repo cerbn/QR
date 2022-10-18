@@ -1,0 +1,22 @@
+ion-card {
+    --background: linear-gradient(#ffe4c1, #ffbe47);
+    margin: 0 auto;
+    top: 5vh;
+    height: 70vh;
+    width: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+
+}
+
+.content{
+    background-color: grey;
+}
+.fondo {
+    height: 200vh;
+    background-color: rgb(160, 154, 148);
+    background-size: cover;
+    text-align: center;
+}

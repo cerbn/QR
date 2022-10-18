@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Lista de asignaturas</h1>
+  <!-- <div *ngIf="asignaturas.length != 0; else elseBlock"> -->
+  <div >
+    <ion-list *ngFor="let a of asignaturas">
+      <ion-card *ngIf="usuario.rut == a.profesor">
+        <ion-item>
+
+            <ion-card-title >Id Asignatura: {{a.id}} Nombre: {{a.nombre}} Sigla:{{a.sigla}}</ion-card-title>
+
+          <ion-button slot="end" color="warning" (click)="generarQR()" (click)="registrar()">Iniciar Clase</ion-button>
+
+        </ion-item>
+      </ion-card>
+
+    </ion-list>
+  </div>
+  <!-- CODIGO QR AQUI -->
+  <ion-item>
+    <ngx-qrcode [elementType]="elementType" [value]="value"></ngx-qrcode>
+    <ion-input placeholder=""  [(ngModel)]="value"  disabled="true"></ion-input>
+    
+
+  </ion-item>
+</ion-content>

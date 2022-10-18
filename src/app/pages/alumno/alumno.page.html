@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Ingresar Codigo:</ion-label>
+    <ion-input [(ngModel)]="scanearQr" [ngModelOptions]="{standalone: true}" id="scanearQr" type="text"></ion-input>
+
+    <ion-button slot="end" color="warning" (click)="scanerQr(scanearQr)">Ingresar QR</ion-button>    
+  </ion-item>
+</ion-content>
