@@ -1,13 +1,14 @@
 ion-card {
-    --background: linear-gradient(#ffe4c1, #ffbe47);
+    --background: linear-gradient(#269fbd, #dddee0);
     margin: 0 auto;
-    top: 5vh;
-    height: 70vh;
-    width: 150vh;
+    top: 0vh;
+    height: 90vh;
+    width: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-size: cover;
+
 
 }
 
@@ -15,7 +16,7 @@ ion-card {
     background-color: grey;
 }
 .fondo {
-    height: 200vh;
+    height: 90vh;
     background-color: rgb(160, 154, 148);
     background-size: cover;
     text-align: center;

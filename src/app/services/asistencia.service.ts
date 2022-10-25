@@ -8,7 +8,8 @@ import { Storage } from '@ionic/storage-angular';
 export class AsistenciaService {
 
   asistencias: any[] = [];
-
+  rut = '';
+  alumno :''
   constructor(private asistenciaStorage: Storage) {
     asistenciaStorage.create();
    }
@@ -31,5 +32,15 @@ async getDatos(key){
 
 }
 
+
+async agregarqr(key, codAlumno, usuario){
+  this.asistencias = await this.asistenciaStorage.get(key) || [];
+
+  var index = this.asistencias.findIndex(value => value.value == codAlumno);
+    this.asistencias[index].alumno.push(usuario.rut);
+    await this.asistenciaStorage.set(key, this.asistencias);
+    return true;
+  
+}
 
 }

@@ -18,8 +18,10 @@ export class ProfesorPage implements OnInit {
   rut :any ;
   usuario = '';
   a ;
+  asigna : any
   
   asistencias: any[] = [];
+  KEY_ASIGNATURAS = 'asignaturas';
   KEY_ASISTENCIA = 'asistencias';
   asistencia = {
     value: '',
@@ -39,6 +41,7 @@ export class ProfesorPage implements OnInit {
     this.rut = this.activatedRoute.snapshot.paramMap.get('rut');
     this.asignaturas = await this.asignaturaStorage.getDatos('asignaturas')
     this.usuario = this.usuarioService.getUsuario(this.rut);
+    this.asigna = this.asignaturaStorage.getDato(this.KEY_ASIGNATURAS ,this.rut);
     console.table(this.usuario);
     await this.cargarDatos();
     
@@ -50,10 +53,8 @@ export class ProfesorPage implements OnInit {
       this.asistencia.value = v4()
       return this.asistencia.value;
     }
-    
-  
-
   }
+
 
   async cargarDatos(){
     this.asistencias = await this.asistenciaStorage.getDatos(this.KEY_ASISTENCIA);

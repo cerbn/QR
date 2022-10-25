@@ -1,70 +1,10 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>Asignaturas</ion-title>
-    <ion-button slot="end" (click)="logout()">Cerrar sesión</ion-button> 
-  </ion-toolbar>
-</ion-header> -->
-
-<!-- <ion-content>
-
-  <form [formGroup]="asignatura" (ngSubmit)="registrar()">
-    <ion-card>
-      <ion-item>
-        <ion-label position="stacked">idAsignatura</ion-label>
-        <ion-input formControlName="idAsignatura" id="idAsignatura" type="text" placeholder="Ingrese idAsignatura"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="stacked">sigla</ion-label>
-        <ion-input formControlName="sigla" id="sigla" type="text" placeholder="Ingrese sigla"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="stacked">profesor</ion-label>
-        <ion-input formControlName="profesor" id="profesor" type="text" placeholder="Ingrese profesor">
-        </ion-input>
-      </ion-item>
-
-
-      <ion-button expand="full" type="submit" [disabled]="!asignatura.valid">REGISTRAR</ion-button>
-      <ion-button expand="full" (click)="modificar()" color="warning">MODIFICAR</ion-button>
-      <ion-button expand="full" type="reset" color="terciary">LIMPIAR</ion-button>
-    </ion-card>
-  </form>
-
-  <h1>Lista de usuarios</h1>
-  <div *ngIf="usuarios.length != 0; else elseBlock">
-    <ion-list *ngFor="let u of usuarios">
-      <ion-card>
-        <ion-item>
-          <ion-card-header>
-            <ion-card-title>{{u.nombre + ' ' + u.ap_paterno}}</ion-card-title>
-            <ion-card-subtitle>{{u.rut}}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-button slot="end" color="warning" (click)="buscar(u.rut)">Buscar</ion-button>
-          <ion-button slot="end" color="danger" (click)="eliminar(u.rut)">Eliminar</ion-button>
-        </ion-item>
-        <ion-card-content>
-          {{u.tipo_usuario}}
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
-  </div>
-  <ng-template #elseBlock>
-    <p>No existen usuarios</p>
-  </ng-template>
-</ion-content> -->
-
-<ion-header>
- 
-</ion-header>
 
 <ion-content>
   <div class="fondo">
-    <ion-card>
+    <ion-card >
       <ion-title>ASIGNATURA</ion-title>
 
-      <ion-item>
+      <ion-item >
         <ion-label position="fixed">sigla</ion-label>
         <ion-input [(ngModel)]="asignatura.sigla" type="text" placeholder="ingrese sigla"></ion-input>
       </ion-item>
@@ -85,29 +25,26 @@
     </ion-card>
 
 
- 
+    <br>
+    <br>
+    <h1>LISTA DE PERSONAS</h1>
     <ion-card class="card2">
 
-      <h1>LISTA DE PERSONAS</h1>
       <ion-list *ngFor="let d of asignaturas">
         <ion-item (click)="cargar(d.id)">
-          <p>ID: {{d.id}} - sigla: {{d.sigla}} - Nombre: {{d.nombre}}</p>
+          <br>
+          <br>
+          <br>
+          <ion-card-tile>
+            ID: {{d.id}} <br><br> sigla: {{d.sigla}} <br><br> Nombre: {{d.nombre}}
+          </ion-card-tile>
+<br>
+<br>
+<br>
           <ion-button (click)="eliminar(d.id)">Eliminar</ion-button>
         </ion-item>
       </ion-list>
 
-      <ion-item>
-        <ion-label>TIPO USUARIO</ion-label>
-        <ion-select [(ngModel)]="tipo">
-          <ion-select-option value="jefe">Jefe</ion-select-option>
-          <ion-select-option value="empleado">Empleado</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item *ngIf="tipo == 'empleado'">
-        <ion-label>HORAS EXTRAS</ion-label>
-        <ion-input [(ngModel)]="sueldo"></ion-input>
-      </ion-item>
     </ion-card>
   </div>
 

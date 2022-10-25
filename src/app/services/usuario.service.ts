@@ -11,29 +11,49 @@ export class UsuarioService {
   usuarios: any[] = [
     {
       rut: '11.222.333-4',
-      nombre: 'Lalo',
-      ap_paterno: 'Cura',
+      nombre: 'Mike',
+      ap_paterno: 'Patton',
       fecha_nac: '2000-12-24',
-      correo: 'administrador@duoc.cl',
+      correo: 'administrador@duocuc.cl',
       clave: 'administrador',
       tipo_usuario: 'administrador'
     },{
       rut: '18.999.000-1',
-      nombre: 'Elvis',
-      ap_paterno: 'Tek',
+      nombre: 'brandon',
+      ap_paterno: 'sanderson',
       fecha_nac: '1990-06-10',
-      correo: 'alumno@duoc.cl',
+      correo: 'alumno1@duocuc.cl',
       clave: 'alumno',
       tipo_usuario: 'alumno'
     },{
+      rut: '18.999.000-2',
+      nombre: 'stephen',
+      ap_paterno: 'king',
+      fecha_nac: '1990-06-10',
+      correo: 'alumno2@duocuc.cl',
+      clave: 'alumno',
+      tipo_usuario: 'alumno'
+    },
+    {
       rut: '20.382.811-k',
-      nombre: 'señor',
+      nombre: 'Profesor',
       ap_paterno: 'jirafales',
       fecha_nac: '1990-02-29',
-      correo: 'profesor@duoc.cl',
+      correo: 'profesor1@duocuc.cl',
+      clave: 'profesor',
+      tipo_usuario: 'profesor'
+    },{
+      rut: '13.158.524-1',
+      nombre: 'julio',
+      ap_paterno: 'profe',
+      fecha_nac: '1990-02-29',
+      correo: 'profesor2@duocuc.cl',
       clave: 'profesor',
       tipo_usuario: 'profesor'
     }
+
+
+
   ];
 
   //VAMOS A CREAR LA VARIABLE QUE SE ENCARGARÁ DE SABER SI TENGO UNA SESIÓN ACTIVA O NO:

@@ -29,18 +29,7 @@ const routes: Routes = [
     path: 'qrcode',
     loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule)
   },
-  {
-    path: 'mantenedor',
-    loadChildren: () => import('./pages/mantenedor/mantenedor.module').then( m => m.MantenedorPageModule)
-  },
-  {
-    path: 'opciones',
-    loadChildren: () => import('./pages/opciones/opciones.module').then( m => m.OpcionesPageModule)
-  },
-  {
-    path: 'clase',
-    loadChildren: () => import('./pages/clase/clase.module').then( m => m.ClasePageModule)
-  },
+
   {
     path: 'asistencia',
     loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)

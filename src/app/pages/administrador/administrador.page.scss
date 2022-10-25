@@ -2,11 +2,11 @@
 
 
 ion-card {
-    background-color: rgb(255, 246, 246);
+    --background: linear-gradient(#269fbd, #dddee0);
     margin: 0 auto;
     top: 5vh;
-    height: 60vh;
-    width: 100vh;
+    height: 80vh;
+    width: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@ ion-card {
     margin: 0 auto;
     top: 5vh;
     height: 20vh;
-    width: 100vh;
+    width: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;

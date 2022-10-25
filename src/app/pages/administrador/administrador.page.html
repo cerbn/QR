@@ -58,6 +58,9 @@
     </form>
 
 
+    <br>
+    <br>
+    <br>
     
     <h1>Lista de usuarios</h1>
     <div *ngIf="usuarios.length != 0; else elseBlock" class="div">
@@ -65,14 +68,15 @@
       <ion-list *ngFor="let u of usuarios" class="lista">
 
         <ion-card class="cardlista">
-          <ion-item>
-            <ion-card-header>
+      
               <ion-card-title>{{u.nombre + ' ' + u.ap_paterno}}</ion-card-title>
               <ion-card-subtitle>{{u.rut}}</ion-card-subtitle>
-            </ion-card-header>
+          <ion-item>
             <ion-button slot="end" color="warning" (click)="buscar(u.rut)">Buscar</ion-button>
             <ion-button slot="end" color="danger" (click)="eliminar(u.rut)">Eliminar</ion-button>
+
           </ion-item>
+
           <ion-card-content>
             {{u.tipo_usuario}}
           </ion-card-content>

@@ -1,18 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profesor</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <h1>Lista de asignaturas</h1>
+<ion-content class="cont" >
+
+  <h1 class="titulo">Lista de asignaturas</h1>
+  <div class="cont">
   <!-- <div *ngIf="asignaturas.length != 0; else elseBlock"> -->
-  <div >
-    <ion-list *ngFor="let a of asignaturas">
+    <ion-list *ngFor="let a of asignaturas" class="cont">
       <ion-card *ngIf="usuario.rut == a.profesor">
-        <ion-item>
+        
+              <p>Id Asignatura: {{a.id}} <br><br>Nombre: {{a.nombre}}<br><br>Sigla:{{a.sigla}}</p>
 
-            <ion-card-title >Id Asignatura: {{a.id}} Nombre: {{a.nombre}} Sigla:{{a.sigla}}</ion-card-title>
+           
+        
+        <ion-item class="qr">
 
           <ion-button slot="end" color="warning" (click)="generarQR()" (click)="registrar()">Iniciar Clase</ion-button>
 
@@ -22,9 +21,14 @@
     </ion-list>
   </div>
   <!-- CODIGO QR AQUI -->
-  <ion-item>
-    <ngx-qrcode [elementType]="elementType" [value]="asistencia.value"></ngx-qrcode>
-    <ion-input placeholder=""  [(ngModel)]="asistencia.value"  disabled="true"></ion-input>
+  <ion-item class="qr">
+    <ion-card class="qr">
+      <ngx-qrcode [elementType]="elementType" [value]="asistencia.value"></ngx-qrcode>
+      <p>codigo de la clase</p>
+      <ion-input class="cod" placeholder=""  [(ngModel)]="asistencia.value"  disabled="true" class="cod"></ion-input >
+
+      
+    </ion-card>
     
 
   </ion-item>

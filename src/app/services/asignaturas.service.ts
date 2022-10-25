@@ -7,55 +7,6 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class AsignaturasService {
 
- /*    //variable:
-    asignaturas: any[] = [
-      {
-        idAsignatura: '1',
-        nombre: 'programacion de aplicaciones moviles',
-        sigla: 'pgy4121',
-        Profesor: 'alan gajardo'
-      },{
-        idAsignatura: '1',
-        nombre: 'ingles',
-        sigla: 'ini5111',
-        Profesor: 'lala lan'
-      }
-    ];
-
-
-    constructor(private router: Router) { }
-
-    //métodos:
-    addAsignatura(asignaturas) {
-      if (this.getAsignatura(asignaturas.idAsignatura) == undefined) {
-        this.asignaturas.push(asignaturas);
-        return true;
-      }
-      return false;
-    }
-  
-    getAsignatura(asignaturas) {
-      return this.asignaturas.find(asig => asignaturas.sigla == asignaturas);
-    }
-  
-    gettAsignaturas() {
-      return this.asignaturas;
-    }
-  
-    updatetAsignatura(asignaturas) {
-      let index = this.asignaturas.findIndex(asig => asig.sigla == asignaturas.sigla);
-      this.asignaturas[index] = asignaturas;
-    }
-  
-    deletetAsignatura(asignaturas) {
-      this.asignaturas.forEach((asig, index) => {
-        if (asig.asignaturas == asignaturas) {
-          this.asignaturas.splice(index, 1);
-        }
-      });
-    }} */
-
-     //VARIABLES:
   asignaturas: any[] = [];
 
   constructor(private asignaturaStorage: Storage) { 
@@ -80,7 +31,7 @@ export class AsignaturasService {
   
   async getDato(key, identificador){
     this.asignaturas = await this.asignaturaStorage.get(key) || [];
-    return this.asignaturas.find(Asignatura => Asignatura.id == identificador);
+    return this.asignaturas.find(Asignatura => Asignatura.profesor == identificador);
   }
 
   async getDatos(key){
